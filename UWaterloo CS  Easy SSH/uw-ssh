@@ -1,0 +1,48 @@
+#!/bin/bash
+
+USERNAME="<Your Quest Username>"
+
+function usage()
+{
+	echo ""
+	echo "UWaterloo CS Easy SSH"
+	echo ""
+	echo "If parameters are not provided, uses default username - $USERNAME"
+	echo ""
+	echo "uw-ssh [-h | --help]"
+	echo "uw-ssh"
+	echo "uw-ssh [-u | --username] <Quest Username>"
+	echo "uw-ssh <Quest Username>"
+	echo ""
+}
+
+while [ "$1" != "" ]; do
+    PARAM=`echo $1`
+    VALUE=`echo $1`
+
+    if [ "$#" -gt 1 ]
+	then
+		VALUE=`echo $2`
+    fi
+
+    case $PARAM in
+        -h | --help)
+            usage
+            exit
+            ;;
+        -u | --username)
+            USERNAME=$VALUE
+	    shift
+            ;;
+        *)
+            USERNAME=$VALUE
+            ;;
+    esac
+    shift
+done
+
+echo ""
+echo "Username: $USERNAME"
+echo "SSHing into $USERNAME@linux.student.cs.uwaterloo.ca......";
+echo ""
+ssh "$USERNAME"@linux.student.cs.uwaterloo.ca
