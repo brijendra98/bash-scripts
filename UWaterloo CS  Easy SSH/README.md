@@ -15,3 +15,12 @@ alias uw-ssh='~/uw-ssh'
 
 ## More Features
 If you want to avoid entering your password everytime you SSH into the server, you can set up **SSH Keys** by following [these instructions](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+
+## Examples
+### Using Default Username
+
+![Example](example2.png?raw=true) 
+
+### Providing Username
+
+![Example](example1.png?raw=true) 
