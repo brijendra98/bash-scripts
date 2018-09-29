@@ -45,4 +45,4 @@ echo ""
 echo "Username: $USERNAME"
 echo "SSHing into $USERNAME@linux.student.cs.uwaterloo.ca......";
 echo ""
-ssh "$USERNAME"@linux.student.cs.uwaterloo.ca
+ssh -Y "$USERNAME"@linux.student.cs.uwaterloo.ca
